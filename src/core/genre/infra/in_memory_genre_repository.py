@@ -11,6 +11,15 @@ class InMemoryGenreRepository(GenreRepository):
 
     def list(self) -> list[Genre]:
         return self.genres
+    
+    def update(self, genre: Genre):
+        for idx, genre_item in enumerate(self.genres):
+            if genre_item.id == genre.id:
+                self.genres[idx] = genre
+                break
 
     def find_by_name(self, name: str) -> Genre:
         return next((genre for genre in self.genres if genre.name == name), None)
+    
+    def find_by_id(self, id: int) -> Genre:
+        return next((genre for genre in self.genres if genre.id == id), None)
