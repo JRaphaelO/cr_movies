@@ -32,7 +32,7 @@ class TestGenre:
 
     def test_genre_str_representation(self):
         genre = Genre('Action', 'Action movies')
-        assert str(genre) != 'Action - Action movies (True)'
+        assert str(genre) == 'Action - Action movies (True)'
 
     def test_genre_repr_representation(self):
         genre = Genre('Action', 'Action movies')
