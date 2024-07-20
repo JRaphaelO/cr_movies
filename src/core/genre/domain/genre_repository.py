@@ -12,3 +12,7 @@ class GenreRepository(ABC):
     @abstractmethod
     def save(self, genre: Genre) -> Genre:
         raise NotImplementedError
+    
+    @abstractmethod
+    def list(self) -> list[Genre]:
+        raise NotImplementedError

@@ -9,5 +9,8 @@ class InMemoryGenreRepository(GenreRepository):
     def save(self, genre: Genre):
         self.genres.append(genre)
 
+    def list(self) -> list[Genre]:
+        return self.genres
+
     def find_by_name(self, name: str) -> Genre:
         return next((genre for genre in self.genres if genre.name == name), None)
